@@ -1,0 +1,17 @@
+import random
+import string
+chars = " " + string.punctuation + string.digits + string.ascii_letters
+chars = list(chars)
+key = chars.copy()
+random.shuffle(key)
+print(f"chars : {chars}");
+print(f"key : {key}");
+#encripted message
+plain_test = input("enter the plain test : ");
+cipher_test = ""
+for letter in plain_test:
+    index = chars.index(letter)
+    cipher_test += key[index]
+print(f"the plain_test = {plain_test}");
+print(f"encripted test = {cipher_test}");
+
