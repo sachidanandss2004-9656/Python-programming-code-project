@@ -1,0 +1,24 @@
+words = [
+    {"spanish": "hola", "english": "hello"},
+    {"spanish": "buenosdias", "english": "good morning"},
+    {"spanish": "buenostardes", "english": "good afternoon"},
+    {"spanish": "buenasnoches", "english": "good night"},
+]
+
+def quiz_user(words):
+    random.shuffle(words)   
+    score = 0       
+
+    for word in words:
+        print(f"What is the meaning of '{word['spanish']}'?")
+        user_answer = input("Enter the meaning: ").strip().lower()
+        correct_answer = word["english"]
+
+        if user_answer == correct_answer:
+            print("Answer is correct!")
+            score += 1
+        else:
+            print("Answer is incorrect!")
+            print(f"The correct answer is: {correct_answer}")
+
+    print(f"You have got {score} marks out of {len(words)}.")
