@@ -1,0 +1,10 @@
+def dollar_to_rupee(dollar,exchange_rate):
+    rupee = dollar * exchange_rate
+    return rupee
+def main():
+    print("dollar to rupee converter ");
+    dollar = float(input("enter the amount of dollar : "))
+    exchange_rate = float(input("enter the exchange rate : "))
+    rupee = dollar_to_rupee(dollar,exchange_rate)
+    print(f"{dollar} USD = {rupee:.2f} RS");
+main()
