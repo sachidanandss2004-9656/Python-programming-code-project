@@ -1,0 +1,6 @@
+numbers = [12,24,31,44,56,66,75,83,92]
+largest = numbers[0]
+for i in numbers:
+    if i > largest:
+        largest = i
+print("the largest number = ",largest);
