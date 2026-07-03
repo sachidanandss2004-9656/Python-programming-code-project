@@ -1,0 +1,48 @@
+#ATM machine
+balance = 7000
+pin = "2005"
+def check_balance():
+    print(f"your current balance = {balance:.2f}");
+def deposit():
+    global balance
+    amount = float(input("enter the amount to be deposited : "))
+    if amount > 0:
+        balance += amount
+        print(f"{amount:.2f} deposited successfully");
+    else:
+        print("invalid amount");
+def withdraw():
+    global balance
+    amount = float(input("enter the amount to be withdrawn : "))
+    if amount <= 0:
+        print("invalid amount");
+    elif amount > balance:
+        print("insufficient balance");
+    else:
+        balance -= amount
+        print(f"{amount:.2f} is withdrawn");
+def main():
+    entered_pin = input("enter the pin : ")
+    if entered_pin != pin:
+        print("wrong pin");
+        return
+    while True:
+        print("-----ATM MENU-----");
+        print("1.check_balance");
+        print("2.deposit");
+        print("3.withdraw");
+        print("4.exit");
+        choice = input("enter your choice : ")
+        if choice == "1":
+            check_balance()
+        elif choice == "2":
+            deposit()
+        elif choice == "3":
+            withdraw()
+        elif choice == "4":
+            print("thank you for choosing this ATM ");
+            break
+        else:
+            print("invalid choice");
+main()
+        
